@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
     
+  resources :user_question_ans
+  resources :question_choices
+  resources :questions
+  get 'admin/index'
   root 'subjects#index'    
   
   resources :assignments

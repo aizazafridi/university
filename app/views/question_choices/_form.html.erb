@@ -1,0 +1,27 @@
+<%= form_with(model: question_choice, local: true) do |form| %>
+  <% if question_choice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question_choice.errors.count, "error") %> prohibited this question_choice from being saved:</h2>
+
+      <ul>
+      <% question_choice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :choice %>
+    <%= form.text_field :choice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_right_choice %>
+    <%= form.check_box :is_right_choice %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Choice:</strong>
+  <%= @question_choice.choice %>
+</p>
+
+<p>
+  <strong>Is right choice:</strong>
+  <%= @question_choice.is_right_choice %>
+</p>
+
+<%= link_to 'Edit', edit_question_choice_path(@question_choice) %> |
+<%= link_to 'Back', question_choices_path %>
