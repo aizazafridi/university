@@ -14,6 +14,8 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+    
+    <%=  form.collection_select(:user_id, User.all, :id, :email) %>
   </div>
 
   <div class="actions">

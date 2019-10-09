@@ -10,11 +10,14 @@ class SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
+    @subject = Subject.find(params[:id])
+    @user = User.find_by_id(@subject.user_id)
   end
 
   # GET /subjects/new
   def new
     @subject = Subject.new
+    #@subject = current_user.subjects.build
   end
 
   # GET /subjects/1/edit
@@ -25,6 +28,8 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
+    #@subject = current_user.subjects.new(subject_params)
+    
 
     respond_to do |format|
       if @subject.save
@@ -69,6 +74,6 @@ class SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:name)
+      params.require(:subject).permit(:name, :users_id, :user_id)
     end
 end
