@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :question_choices
   resources :questions
   get 'admin/index'
-  root 'subjects#index'    
+  root 'admin#index'    
   
   resources :assignments
   resources :subjects

@@ -10,11 +10,15 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1
   # GET /assignments/1.json
   def show
+    @assignment = Assignment.find(params[:id])
+    @user = User.find_by_id(@assignment.user_id)
+    @subject = Subject.find_by_id(@assignment.subject_id)
   end
 
   # GET /assignments/new
   def new
     @assignment = Assignment.new
+    #@assignment = current_user.assignments.build
   end
 
   # GET /assignments/1/edit
@@ -25,6 +29,7 @@ class AssignmentsController < ApplicationController
   # POST /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
+    #@assignment = current_user.assignments.new(assignment_params)
 
     respond_to do |format|
       if @assignment.save
@@ -69,6 +74,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:name, :total_marks, :obtained_marks)
+      params.require(:assignment).permit(:name, :total_marks, :obtained_marks, :user_id, :subject_id)
     end
 end

@@ -15,15 +15,13 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :total_marks %>
-    <%= form.text_field :total_marks %>
+  <div class="fields">
+     <%= form.label :user %>
+     <%= form.collection_select(:user_id, User.all, :id, :email) %>
   </div>
-
-  <div class="field">
-    <%= form.label :obtained_marks %>
-    <%= form.text_field :obtained_marks %>
+  <div class="fields">
+     <%= form.label :subject %>
+     <%= form.collection_select(:subject_id, Subject.all, :id, :name) %> 
   </div>
 
   <div class="actions">
