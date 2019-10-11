@@ -10,6 +10,9 @@ class QuestionChoicesController < ApplicationController
   # GET /question_choices/1
   # GET /question_choices/1.json
   def show
+    @question_choices = QuestionChoice.find(params[:id])
+    @question = Question.find_by_id(@question_choices.question_id)
+      
   end
 
   # GET /question_choices/new
@@ -69,6 +72,6 @@ class QuestionChoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_choice_params
-      params.require(:question_choice).permit(:choice, :is_right_choice)
+      params.require(:question_choice).permit(:choice, :is_right_choice, :question_id)
     end
 end

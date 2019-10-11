@@ -10,6 +10,10 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @question = Question.find(params[:id])
+    @assignment = Assignment.find_by_id(@question.assignment_id)
+    @subject = Subject.find_by_id(@assignment.subject_id)
+    @user = User.find_by_id(@subject.user_id)
   end
 
   # GET /questions/new
@@ -69,6 +73,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question)
+      params.require(:question).permit(:question, :assignment_id)
     end
 end

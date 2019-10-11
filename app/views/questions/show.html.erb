@@ -4,6 +4,18 @@
   <strong>Question:</strong>
   <%= @question.question %>
 </p>
+<p>
+    <strong>Assignment:</strong>
+    <%= @assignment.name %>
+</p>
+<p>
+    <strong>Subject:</strong>
+    <%= @subject.name %>
+</p>
+<p>
+    <strong>User:</strong>
+    <%= @user.email %>
+</p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

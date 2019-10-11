@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= form.label :question %>
-    <%= form.text_field :question %>
+    <%= form.text_area :question %>
+  </div>
+  <div class="fields">
+      <%= form.label :Assignment %>
+      <%= form.collection_select(:assignment_id, Assignment.all, :id, :name) %>
   </div>
 
   <div class="actions">

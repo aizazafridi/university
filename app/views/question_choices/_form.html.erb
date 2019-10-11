@@ -20,6 +20,11 @@
     <%= form.label :is_right_choice %>
     <%= form.check_box :is_right_choice %>
   </div>
+  
+  <div class="field">
+      <%= form.label :Question %>
+      <%= form.collection_select(:question_id, Question.all, :id, :question) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
