@@ -15,7 +15,7 @@ class AssignmentsController < ApplicationController
     @subject = Subject.find_by_id(@assignment.subject_id)
     
     #Finding Questions in Assignment
-    @question = Question.joins(:assignment)
+    @question = Question.where(assignment_id: params[:id])
   end
 
   # GET /assignments/new

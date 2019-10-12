@@ -15,11 +15,8 @@ class QuestionsController < ApplicationController
     @subject = Subject.find_by_id(@assignment.subject_id)
     @user = User.find_by_id(@subject.user_id)
     
-    #getting question choices
-    #@question_choices = Question.joins(:question_choices)
-    #@question_choice = Question.joins(:question_choices)
-    #@question_choice = QuestionChoice.joins(:question)
-    @question_choice = Question.select(:choice).joins(:question_choices)
+    #Getting question choices
+    @question_choice = QuestionChoice.where(question_id: params[:id])
   end
 
   # GET /questions/new
