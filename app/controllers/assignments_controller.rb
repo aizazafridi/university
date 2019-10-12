@@ -16,6 +16,9 @@ class AssignmentsController < ApplicationController
     
     #Finding Questions in Assignment
     @question = Question.where(assignment_id: params[:id])
+    
+    #Finding Question Choices
+    @choice = QuestionChoice.where(question_id: Question.where(assignment_id: params[:id]))
   end
 
   # GET /assignments/new
