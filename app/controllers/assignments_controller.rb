@@ -13,6 +13,9 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
     @user = User.find_by_id(@assignment.user_id)
     @subject = Subject.find_by_id(@assignment.subject_id)
+    
+    #Finding Questions in Assignment
+    @question = Question.joins(:assignment)
   end
 
   # GET /assignments/new

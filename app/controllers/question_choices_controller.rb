@@ -12,6 +12,8 @@ class QuestionChoicesController < ApplicationController
   def show
     @question_choices = QuestionChoice.find(params[:id])
     @question = Question.find_by_id(@question_choices.question_id)
+    @assignment = Assignment.find_by_id(@question.assignment_id)
+    @subject = Subject.find_by_id(@assignment.subject_id)
       
   end
 

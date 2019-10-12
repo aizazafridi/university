@@ -4,6 +4,12 @@
   <strong>Question:</strong>
   <%= @question.question %>
 </p>
+
+<p>
+  <% @question_choice.each do |choice| %>
+      <%= choice.choice %> <br/>
+  <%end%>
+</p>
 <p>
     <strong>Assignment:</strong>
     <%= @assignment.name %>

@@ -15,6 +15,11 @@
     <%= @user.email %>
 </p>
 
+<p> <strong>Questions:</strong></p>
+<% @question.each do |question| %>
+    1. <%= question.question %> <br />
+<%end %>
+
 
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
