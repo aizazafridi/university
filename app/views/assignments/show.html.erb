@@ -16,14 +16,14 @@
 </p>
 
 <p> <strong>Questions:</strong></p>
-<% @question.each do |question| %>
+<% @question.each do |question| 
+   @choice = QuestionChoice.where(question_id: question.id) %> 
     1. <%= question.question %> <br />
+       <% @choice.each do |choice| %>
+           <%= choice.choice %> <br />
+        <%end %>
+    <br /> 
 <%end %>
-
-<% @choice.each do|choice| %>
-    <%= choice.choice %>
-<%end %>
-
 <p>
 </p>
 
