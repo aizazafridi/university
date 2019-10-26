@@ -1,5 +1,6 @@
 class UserQuestionAnsController < ApplicationController
-  before_action :set_user_question_an, only: [:show, :edit, :update, :destroy]
+    layout 'admin'
+    before_action :set_user_question_an, only: [:show, :edit, :update, :destroy]
 
   # GET /user_question_ans
   # GET /user_question_ans.json

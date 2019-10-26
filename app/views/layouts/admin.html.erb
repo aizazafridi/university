@@ -1,0 +1,32 @@
+<html>
+    
+    <head>
+        <%= stylesheet_link_tag('application', :media => 'all') %>
+    
+        <%= javascript_include_tag('application') %>
+
+        <h4>Admin Area</h4>
+    </head>
+    
+    <body>
+
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">E-Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li> <%= link_to("Subjects", subjects_path) %> </li>
+      <li> <%= link_to("Assignments", assignments_path) %> </li>
+      <li> <%= link_to("Questions", questions_path) %> </li>
+      <li> <%= link_to("Question Choices", question_choices_path) %> </li>
+    </ul>
+  </div>
+</nav>
+    
+    <%= yield %>
+    
+    </body>
+    
+</html>

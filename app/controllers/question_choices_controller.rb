@@ -1,5 +1,6 @@
 class QuestionChoicesController < ApplicationController
-  before_action :set_question_choice, only: [:show, :edit, :update, :destroy]
+    layout 'admin'
+    before_action :set_question_choice, only: [:show, :edit, :update, :destroy]
 
   # GET /question_choices
   # GET /question_choices.json

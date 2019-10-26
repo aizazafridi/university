@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+    layout 'admin'
+    before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
