@@ -1,10 +1,14 @@
 <html>
     
     <head>
-        <%= stylesheet_link_tag    "application", :media => "all" %>
-        <%= javascript_include_tag "application" %>
+        
         <%= csrf_meta_tags %>
         <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
+        
+        <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" %>
+        <%= javascript_include_tag href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" %>
+        <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" %>
+
     </head>
 
         <h4>Admin Area</h4>
@@ -12,21 +16,22 @@
     
     <body>
 <div class="container">
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">E-Learning</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="nav-item"> <%= link_to("Subjects", subjects_path) %> </li>
-      <li class="nav-item"> <%= link_to("Assignments", assignments_path) %> </li>
-      <li class="nav-item"> <%= link_to("Questions", questions_path) %> </li>
-      <li class="nav-item"> <%= link_to("Question Choices", question_choices_path) %> </li>
+      <li> <%= link_to("Subjects", subjects_path) %> </li>
+      <li> <%= link_to("Assignments", assignments_path) %> </li>
+      <li> <%= link_to("Questions", questions_path) %> </li>
+      <li> <%= link_to("Question Choices", question_choices_path) %> </li>
     </ul>
   </div>
 </nav>
 </div>
+
+
 
 
     <%= yield %>
