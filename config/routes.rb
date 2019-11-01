@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  get 'home/index'
   resources :user_question_ans
   resources :question_choices
   resources :questions

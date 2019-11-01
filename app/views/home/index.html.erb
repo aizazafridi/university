@@ -1,0 +1,33 @@
+<html>
+
+    <strong> Welcome <%= @username %> </strong> <br />
+    
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Assignments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @assignments.each do |assignment| %>    
+      <tr>
+        <td> Name: <%= assignment.name %> </td>
+      </tr>
+      <%end%>
+    </tbody>
+    <thead>
+        <tr>
+            <th>Subjects</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @subjects.each do |subject| %>
+        <tr>
+            <td> Name: <%= subject.name %></td>
+        </tr>
+        <%end%>
+    </tbody>
+    </table>
+
+</html>
+
