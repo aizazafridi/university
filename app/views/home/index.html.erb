@@ -12,6 +12,7 @@
       <% @assignments.each do |assignment| %>    
       <tr>
         <td> Name: <%= assignment.name %> </td>
+        <td> <%= link_to "Show", {:controller => "home", :action => "assignment", :id => assignment.id }%></td>
       </tr>
       <%end%>
     </tbody>

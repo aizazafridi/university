@@ -15,8 +15,10 @@ class HomeController < ApplicationController
     
     #Assignment info
     @assignments = Assignment.where(user_id: @userid)
-    
-    
+  end
+  
+  def assignment
+      @assignment = Assignment.find(params[:id])
   end
   
 end
