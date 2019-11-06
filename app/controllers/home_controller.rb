@@ -19,6 +19,19 @@ class HomeController < ApplicationController
   
   def assignment
       @assignment = Assignment.find(params[:id])
+      
+      #Finding Questions in Assignment
+      @question = Question.where(assignment_id: @assignment.id)
+      
+      #Creating new instance of UserQuestionChoice
+      #@user_choice = UserQuestionChoice.new
+  end
+  
+  def result
+      @params = params[:choice] 
+  end
+  
+  def calculate
   end
   
 end

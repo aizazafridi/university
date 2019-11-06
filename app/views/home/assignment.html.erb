@@ -1,4 +1,20 @@
 <html>
     <strong>User Assignment Show Page</strong> <br />
+<p>    
+    <strong>Name:</strong>
     <%= @assignment.name %>
+</p>
+<br />
+
+<%= form_with(url: "/home/result", method: "get") do |f| %>
+    <% @question.each do |question| %> <br />
+        <%= question.question %> <br />
+        <%= f.collection_select(:choice, QuestionChoice.where(question_id: question.id), :choice, :choice) %> <br />
+    <%end %>
+    <br />
+    <%= f.submit("Complete Assignment") %>
+<%end %>
+            
+
+
 </html>

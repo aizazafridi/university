@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'admin#index' 
   
   get '/home/assignment/:id', to: 'home#assignment'
+  get '/home/result'
   
   resources :assignments
   resources :subjects
